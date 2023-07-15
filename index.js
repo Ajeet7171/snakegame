@@ -43,7 +43,7 @@ function gameEngine() {
         inputDir={ x: 0, y: 0 };
         alert("Game over press any key to play again!");
         snakeArr=[{ x: 5, y: 15 }];
-        // musicsound.play();
+         musicsound.play();
         score = 0;
      }
 // if food have been eaten
@@ -91,22 +91,6 @@ snakeArr[0].y +=inputDir.y;
     board.appendChild(foodElement);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // logic
 let HighScore=localStorage.getItem("HighScore");
 if (HighScore==null) {
@@ -120,8 +104,8 @@ else{
 window.requestAnimationFrame(main);
 window.addEventListener('keydown',e=>{
 inputDir={x:0,y:1} //start the game
-move.play();
-// musicsound.play();
+movesound.play();
+musicsound.play();
 switch (e.key) {
     case "ArrowUp":
         console.log("ArrowUp")
