@@ -1,9 +1,9 @@
 // variables
 let inputDir = { x: 0, y: 0 };
-const foodsound = new Audio('food.mp3');
+const foodSound = new Audio('food.mp3');
 const gameover = new Audio('gameover.mp3');
-const move = new Audio('./Music/move.mp3');
-const musicsound = new Audio('music.mp3');
+const moveSound = new Audio('move.mp3');
+const musicSound = new Audio('music.mp3');
 let speed = 5;
 let score = 0;
 let lastpaintTime = 0;
@@ -39,16 +39,16 @@ function isCollide(snake){
 function gameEngine() {
      if(isCollide(snakeArr)){
         gameover.play();
-        musicsound.pause();
+        musicSound.pause();
         inputDir={ x: 0, y: 0 };
         alert("Game over press any key to play again!");
         snakeArr=[{ x: 5, y: 15 }];
-         musicsound.play();
+         musicSound.play();
         score = 0;
      }
 // if food have been eaten
 if(snakeArr[0].y==food.y && snakeArr[0].x==food.x){
-    foodsound.play();
+    foodSound.play();
     score +=1;
     if (score>HighScoreval) {
         HighScoreval=score;
@@ -104,8 +104,8 @@ else{
 window.requestAnimationFrame(main);
 window.addEventListener('keydown',e=>{
 inputDir={x:0,y:1} //start the game
-movesound.play();
-musicsound.play();
+moveSound.play();
+musicSound.play();
 switch (e.key) {
     case "ArrowUp":
         console.log("ArrowUp")
